@@ -27,7 +27,7 @@ const projects = [
     title: "E-Commerce Platform",
     category: "MERN STACK",
     url: "https://e-commerce-rho-flax.vercel.app/",
-    image: "/ecommerce-preview.png",
+    image: `${import.meta.env.BASE_URL}ecommerce-preview.png`,
     description:
       "A full-stack shopping experience with product discovery, filtering, cart management, secure authentication, and payment integration.",
     tags: ["React", "Node.js", "MongoDB", "Express"],
