@@ -26,6 +26,8 @@ const projects = [
     number: "01",
     title: "E-Commerce Platform",
     category: "MERN STACK",
+    url: "https://e-commerce-rho-flax.vercel.app/",
+    image: "/ecommerce-preview.png",
     description:
       "A full-stack shopping experience with product discovery, filtering, cart management, secure authentication, and payment integration.",
     tags: ["React", "Node.js", "MongoDB", "Express"],
@@ -190,29 +192,31 @@ function App() {
             <span>{projects.length.toString().padStart(2, "0")} projects</span>
           </div>
           <div className="project-grid">
-            {projects.map((project) => (
-              <article className="project-card" key={project.title}>
+            {projects.map((project) => {
+              const card = (
+                <>
                 <div className="project-top">
                   <span className="project-number">{project.number}</span>
                   <span className="project-category">{project.category}</span>
                 </div>
                 <div className="project-preview">
-                  <div className="preview-window">
-                    <div className="preview-bar"><i /><i /><i /></div>
-                    <div className={project.number === "01" ? "shop-preview" : "api-preview"}>
-                      {project.number === "01" ? (
-                        <>
-                          <div className="preview-nav" />
-                          <div className="preview-products"><i /><i /><i /></div>
-                        </>
-                      ) : (
+                  {project.image ? (
+                    <img
+                      className="project-screenshot"
+                      src={project.image}
+                      alt={`${project.title} homepage preview`}
+                    />
+                  ) : (
+                    <div className="preview-window">
+                      <div className="preview-bar"><i /><i /><i /></div>
+                      <div className="api-preview">
                         <>
                           <div className="preview-code"><b>{"{"}</b><i /><i /><i /><b>{"}"}</b></div>
                           <div className="preview-result"><i /><i /></div>
                         </>
-                      )}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
                 <div className="project-info">
                   <h3>{project.title}</h3>
@@ -221,8 +225,26 @@ function App() {
                     {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                   </div>
                 </div>
-              </article>
-            ))}
+                </>
+              );
+
+              return project.url ? (
+                <a
+                  className="project-card"
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${project.title} live website`}
+                  key={project.title}
+                >
+                  {card}
+                </a>
+              ) : (
+                <article className="project-card" key={project.title}>
+                  {card}
+                </article>
+              );
+            })}
           </div>
         </section>
 
