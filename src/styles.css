@@ -279,6 +279,17 @@ button { font: inherit; }
 .timeline-main h3 { margin: 0 0 5px; font-family: "Manrope"; font-size: 25px; }
 .timeline-main h4 { margin: 0 0 20px; color: var(--orange); font-size: 14px; }
 .timeline-main ul { margin: 0; padding-left: 18px; color: #5d6874; line-height: 1.8; }
+.certificate-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255, 122, 61, .35);
+  padding-bottom: 3px;
+}
 
 .inline-heading { display: flex; justify-content: space-between; align-items: end; }
 .inline-heading > span { color: #969fa7; font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; }

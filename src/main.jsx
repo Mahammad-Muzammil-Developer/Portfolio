@@ -47,6 +47,7 @@ const experience = [
     period: "JAN 2026 — MAY 2026",
     role: "Full Stack Developer Intern",
     company: "Anukta Infotech Pvt. Ltd.",
+    certificate: "https://drive.google.com/file/d/1JKCu1PVIFcMeKc9GT8Zg1hNFCjkhb0Nj/view",
     points: [
       "Built and maintained full-stack application features using React.js and Node.js.",
       "Integrated REST APIs and worked with PostgreSQL and MongoDB.",
@@ -179,6 +180,16 @@ function App() {
                   <ul>
                     {item.points.map((point) => <li key={point}>{point}</li>)}
                   </ul>
+                  {item.certificate && (
+                    <a
+                      className="certificate-link"
+                      href={item.certificate}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View Internship Certificate <ArrowUpRight size={15} />
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
